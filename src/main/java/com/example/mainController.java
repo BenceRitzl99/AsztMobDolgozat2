@@ -13,6 +13,8 @@ package com.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 public class mainController {
 
@@ -33,7 +35,17 @@ public class mainController {
 
     @FXML
     void gombKilepes(ActionEvent event) {
+        Platform.exit();
 
+    }
+
+    @FXML
+    void gombInfo(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText("Használati útmutató");
+        alert.setContentText("Írd be a trapéz oldalait, majd nyomd meg a számítás gombot. \n Ritzl Bence \n II/2/N \n 2024-11-12");
+        alert.showAndWait();
     }
 
     @FXML
